@@ -10,4 +10,7 @@ Steps do develop a 2D game from scratch using SDL and only open source software
 	- mac
 
 - Install libraries
+
+- Makefile
+	-run helloworld
 	
