@@ -1,10 +1,11 @@
 CC=g++
-CFLAGS=--std=c++17 -Wall `pkg-config --cflags --libs sdl2 SDL2_image SDL2_ttf SDL2_mixer`
+CFLAGS=--std=c++17 -Wall 
+LFLAGS = `sdl2-config --libs`
 SRC=src/*.cpp
 OUT=dist/game.exe
 
 buildall:
-	$(CC) $(CFLAGS) -o $(OUT) $(SRC)
+	$(CC) $(CFLAGS) -o $(OUT) $(SRC) $(LFLAGS)
 clean:
 	rm -fv $(OUT)
 run:
