@@ -1,10 +1,21 @@
-#include <SDL2/SDL.h>
-
-SDL_Window *window = NULL;
-SDL_Renderer *renderer = NULL;
+#include "./Constants.h"
+#include "./Game.h"
 
 
 int main(int argc, char *argv[])
 {
+	Game *game = new Game();
+
+	game->Initialize(WINDOW_WIDTH, WINDOW_HEIGHT);
+
+	while(game->IsRunning())
+	{
+		game->ProcessInput();
+		game->Update();
+		game->Render();
+	}
+	
+	game->Destroy();
+
 	return 0;
 }
