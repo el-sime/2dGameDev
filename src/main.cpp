@@ -1,11 +1,21 @@
-#include <iostream>
-#include <SDL2/SDL.h>
+#include "./Constants.h"
+#include "./Game.h"
 
-SDL_Window *window = NULL;
-SDL_Renderer *renderer = NULL;
 
 int main(int argc, char *argv[])
 {
-	std::cout << "Hello, your makefile works\n";
+	Game *game = new Game();
+
+	game->Initialize(WINDOW_WIDTH, WINDOW_HEIGHT);
+
+	while(game->IsRunning())
+	{
+		game->ProcessInput();
+		game->Update();
+		game->Render();
+	}
+	
+	game->Destroy();
+
 	return 0;
 }
