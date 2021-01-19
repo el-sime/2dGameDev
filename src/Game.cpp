@@ -17,8 +17,8 @@ bool Game::IsRunning() const
 
 float projectilePosX = 0.0f;
 float projectilePosY = 0.0f;
-float projectileVelX = 0.1f;
-float projectileVelY = 0.5f;
+float projectileVelX = 10.0f;
+float projectileVelY = 1.0f;
 /*******************************/
 
 void Game::Initialize(int width, int height)
@@ -77,10 +77,11 @@ void Game::ProcessInput()
 	}
 }
 
-void Game::Update()
+void Game::Update(float deltaTime)
 {
-	projectilePosX += projectileVelX;
-	projectilePosY += projectileVelY;
+//something something framerate
+	projectilePosX += projectileVelX * deltaTime;
+	projectilePosY += projectileVelY * deltaTime;
 }
 
 void Game::Destroy()
