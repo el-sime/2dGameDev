@@ -17,8 +17,8 @@ bool Game::IsRunning() const
 
 float projectilePosX = 0.0f;
 float projectilePosY = 0.0f;
-float projectileVelX = 10.0f;
-float projectileVelY = 1.0f;
+float projectileVelX = 120.0f;
+float projectileVelY = 130.0f;
 /*******************************/
 
 void Game::Initialize(int width, int height)
