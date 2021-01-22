@@ -17,7 +17,7 @@ class Game
 		bool IsRunning() const;
 		void Initialize(int width, int height);
 		void ProcessInput();
-		void Update();
+		void Update(float deltaTime);
 		void Render();
 		void Destroy();
 };
